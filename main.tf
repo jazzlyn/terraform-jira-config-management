@@ -14,8 +14,8 @@ module "filter" {
   filter_permissions = var.filter_permissions
 }
 
-#module "project" {
-#  for_each = var.projects
-#  source = "./modules/project"
-#  project = each.value
-#}
+module "project_memberships" {
+  for_each = var.project_memberships
+  source = "./modules/project_memberships"
+  project = each.value
+}
